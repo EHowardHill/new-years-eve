@@ -1,0 +1,73 @@
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    a {
+        color: lightblue;
+    }
+</style>
+
+<script>
+    var location = 0;
+
+    function listen() {
+        location++;
+        var newt = "";
+        switch(location) {
+            case 1: {
+                newt = "The road ahead of you is going to be very hard.";
+                break;
+            }
+            case 2: {
+                newt = "But I wouldn't be sending you on it if I didn't think you could do it.";
+                break;
+            }
+            case 3: {
+                newt = "It needs to be you.";
+                break;
+            }
+            case 4: {
+                newt = "Now, when you get there, you're going to meet a girl named Milae. She may put you on edge a little at first, but I promise you that she will be your friend.";
+                break;
+            }
+            case 5: {
+                newt = "We've known each other for a long time and I trust her very much.";
+                break;
+            }
+            case 6: {
+                newt = "You're going to take a message to the people she's staying with, and then I want you to return here with her.";
+                break;
+            }
+            case 7: {
+                newt = "Don't worry about the way. She knows it.";
+                break;
+            }
+            case 8: {
+                newt = "Make sure she's safe. I know she'll be fine, but there are some scary things out there, Moon.";
+                break;
+            }
+            case 9: {
+                newt = "Thank you so much.";
+                break;
+            }
+            case 10: {
+                break;
+            }
+            case 11: {
+                document.location = "game.htm";
+            }
+        }
+        document.getElementById("myText").innerText = newt;
+    }
+</script>
+
+<body>
+    <center>
+        <div style="padding: 16px;" id="myText">
+            Munsig Park, you've been asleep for long enough.
+        </div>
+        <button onclick="listen()">Keep listening.</button>
+    </center>
+</body>
