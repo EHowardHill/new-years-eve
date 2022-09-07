@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link src="./primary.css">
+
+        <style>
+
+            body {
+                background-image: url("./img/stars.jpg");
+            }
+
+            .shoulder {
+                width: 20%;
+            }
+
+            .content {
+                width: 60%;
+            }
+
+            @media (max-width: 600px) {
+                .shoulder {
+                    width: 5%;
+                }
+
+                .content {
+                    width: 90%;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <table style="width: 100%">
+
+            <tr>
+                <center>
+                    <audio controls src="./sfx/roll01.mid">
+                        <embed src="./sfx/roll03-edit.mid">
+                    </audio>
+                </center>
+            </tr>
+            <tr>
+                <td class="shoulder"></td>
+                <td class="content">
+                    <iframe src="./internal.htm" width="100%" height="640px"></iframe>
+                </td>
+                <td class="shoulder"></td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+        <p style="color:transparent">
+            <u>New Year's Eve</u> uses iframes to contain the story. On text-based browsers, press 'ENTER' to continue.
+        </p>
+    </body>
+</html>

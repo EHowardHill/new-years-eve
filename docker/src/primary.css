@@ -1,0 +1,12 @@
+body {
+    background-color: white;
+}
+
+@font-face {
+    font-family: GoudyOldStyle;
+    src: url(goudy.ttf);
+}
+
+body {
+    font-family: GoudyOldStyle;
+}
