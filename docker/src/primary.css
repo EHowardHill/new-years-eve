@@ -1,12 +1,18 @@
-body {
-    background-color: white;
-}
-
 @font-face {
     font-family: GoudyOldStyle;
     src: url(goudy.ttf);
 }
 
 body {
+    background-color: white;
     font-family: GoudyOldStyle;
+}
+
+avatar {
+    padding: 4px;
+}
+
+selected {
+    border-style: inset;
+    box-shadow: 2px;
 }
