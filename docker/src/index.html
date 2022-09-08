@@ -34,14 +34,12 @@
 
             function musicKill() {
                 document.getElementById("songTitle").textContent = "";
-                document.embeds[0].Stop();
                 document.getElementById("midiPlayer").stop();
             }
 
             function setMusic(url, friendlyName) {
                 document.getElementById("songTitle").textContent = friendlyName;
                 document.getElementById("midiPlayerBg").setAttribute("src", url);
-                document.embeds[0].Play();
 
                 document.getElementById("midiPlayer").setAttribute("src", url);
                 document.getElementById("midiPlayer").reload();
