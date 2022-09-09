@@ -34,6 +34,7 @@
 
             function musicKill() {
                 document.getElementById("songTitle").textContent = "";
+                document.getElementById("midiPlayerBg").setAttribute("src", "");
                 document.getElementById("midiPlayer").stop();
             }
 
@@ -60,7 +61,7 @@
                 </td>
                 <td>
                     <midi-player style="color: black;" id="midiPlayer" loop src="./sfx/arirang.mid" sound-font></midi-player>
-                    <embed height="16px" width="96px" loop="false" autostart="true" autoplay="true" id="midiPlayerBg" src="./sfx/arirang.mid"></embed>
+                    <bgaudio id="midiPlayerBg" src="./sfx/arirang.mid"></bgaudio>
                 </td>
             </tr>
         </table>
