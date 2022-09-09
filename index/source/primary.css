@@ -8,11 +8,9 @@ body {
     font-family: GoudyOldStyle;
 }
 
-avatar {
-    padding: 4px;
-}
-
-selected {
-    border-style: inset;
-    box-shadow: 2px;
+.letter {
+    padding: 24px;
+    background-color: navajowhite;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
 }
