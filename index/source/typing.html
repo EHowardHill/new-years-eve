@@ -1,0 +1,77 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<table>
+    <tr>
+        <th>
+            Time remaining:
+        </th>
+        <th>
+
+        </th>
+        <th>
+            <div id="timer">30</div>
+        </th>
+    </tr>
+    <tr>
+        <div id="success"></div>
+    </tr>
+</table>
+
+<script>
+    var time = 30;
+    var finished = false;
+
+    function deduct() {
+        if (finished == false) {
+            time = time - 1;
+            document.getElementById("timer").textContent = time;
+            console.log(time);
+        } else {
+            document.getElementById("success").textContent = "Finished!"
+        }
+    }
+
+    function onKeyDown() {
+        document.getElementById("myText").value = "";
+        let myChar = String.fromCharCode(event.keyCode);
+        if (document.getElementById("yourText").textContent.charAt(0) == " ") {
+            document.getElementById("yourText").textContent = document.getElementById("yourText").textContent.substring(1);
+        }
+        if (document.getElementById("yourText").textContent.charAt(0) == ",") {
+            document.getElementById("yourText").textContent = document.getElementById("yourText").textContent.substring(1);
+        }
+        if (document.getElementById("yourText").textContent.charAt(0) == ".") {
+            document.getElementById("yourText").textContent = document.getElementById("yourText").textContent.substring(1);
+        }
+        if (document.getElementById("yourText").textContent.charAt(0) == "'") {
+            document.getElementById("yourText").textContent = document.getElementById("yourText").textContent.substring(1);
+        }
+        if (document.getElementById("yourText").textContent.charAt(0).toUpperCase() == myChar) {
+            document.getElementById("yourText").textContent = document.getElementById("yourText").textContent.substring(1);
+        }
+
+        if (document.getElementById("yourText").textContent.length < 1) {
+            finished = true;
+        }
+    }
+
+    setInterval("deduct()", 1000);
+</script>
+
+<table>
+    <tr>
+        <th>
+            Type the text below into this box: 
+        </th>
+        <th>
+
+        </th>
+        <th>
+            <input type="text" id="myText" onchange="validateText()" onkeydown="return onKeyDown()">  
+        </th>
+    </tr>
+</table>
+
+<p id="yourText">In this minigame, you need to recreate this text in the box above before the timer runs out to win. It's supposed to simulate running away from something</p>
