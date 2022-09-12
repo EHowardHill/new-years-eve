@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="./primary.css">
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+</style>
+
+<center>
+    <a id="continue" href="#"><img id="runPicture" alt="Continue" src="./img/t_blank.jpg" /></a>
+</center>
+<hr>
+
+<table>
+    <tr>
+        <th>
+            Time remaining:
+        </th>
+        <th>
+
+        </th>
+        <th>
+            <div id="timer">30</div>
+        </th>
+    </tr>
+    <tr>
+        <div id="success"></div>
+    </tr>
+</table>
+
+<script>
+    var time = 30;
+    var finished = false;
+
+    function deduct() {
+        if (finished == false) {
+            if (time == 0) {
+                window.location = "./18b.htm";
+            }
+
+            time = time - 1;
+            document.getElementById("timer").textContent = time;
+            console.log(time);
+        } else {
+            document.getElementById("success").textContent = "You made it out alive. This will matter.";
+            document.getElementById("runPicture").setAttribute("src", "./img/t_run.jpg");
+            document.getElementById("continue").setAttribute("href", "./18a.htm");
+        }
+    }
+
+    function onKeyDown() {
+        document.getElementById("myText").value = "";
+        let myChar = String.fromCharCode(event.keyCode);
+        if (document.getElementById("yourText").textContent.charAt(0) == " ") {
+            document.getElementById("yourText").textContent = document.getElementById("yourText").textContent.substring(1);
+        }
+        if (document.getElementById("yourText").textContent.charAt(0) == ",") {
+            document.getElementById("yourText").textContent = document.getElementById("yourText").textContent.substring(1);
+        }
+        if (document.getElementById("yourText").textContent.charAt(0) == ".") {
+            document.getElementById("yourText").textContent = document.getElementById("yourText").textContent.substring(1);
+        }
+        if (document.getElementById("yourText").textContent.charAt(0) == "'") {
+            document.getElementById("yourText").textContent = document.getElementById("yourText").textContent.substring(1);
+        }
+        if (document.getElementById("yourText").textContent.charAt(0).toUpperCase() == myChar) {
+            document.getElementById("yourText").textContent = document.getElementById("yourText").textContent.substring(1);
+        }
+
+        if (document.getElementById("yourText").textContent.length < 1) {
+            finished = true;
+        }
+    }
+
+    setInterval("deduct()", 1000);
+</script>
+
+<table>
+    <tr>
+        <th>
+            Type the text below into this box: 
+        </th>
+        <th>
+
+        </th>
+        <th>
+            <input type="text" id="myText" onchange="validateText()" onkeydown="return onKeyDown()">  
+        </th>
+    </tr>
+</table>
+
+<p id="yourText">You run. There is a screeching noise. He's sending one of his King Rats after you. You know that if it gets to you then it's going to dissolve your flesh</p>

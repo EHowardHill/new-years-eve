@@ -1,8 +1,17 @@
 <link rel="stylesheet" href="./primary.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script>
     function testJs() {
         alert("JavaScript is enabled!");
+    }
+
+    function subscribe() {
+        $.post("http://localhost/request", {
+                    "email": document.getElementById("myEmail").value
+                }, function(resp) {
+                });
+        alert("Added to list!");
     }
 </script>
 
@@ -10,10 +19,27 @@
     <a href="./1.htm"><img alt="Continue" src="./img/t_run.jpg" /></a>
 </center>
 <hr>
+
+<center>
+
+    <h1>
+        <u>New Year's Eve</u>
+    </h1>
+    <marquee>An original web-based story about death, the afterlife, and its consequences by Cinemint Games</marquee>
+    <hr>
+
+    <b>Want chapter updates?</b> Submit your email address:
+    <input id="myEmail" type="email" />
+    <button onclick="subscribe()">Submit</button>
+    <hr>
+
+</center>
+
 <p>
     <b>Chapters:<br></b>
-    <a href="1.htm">Chapter One</a><br>
-    <a href="10.htm">Chapter Two</a><br>
+    <a href="1.htm">Chapter One</a> - September 8th, 2022<br>
+    <a href="10.htm">Chapter Two</a> - September 15th, 2022<br>
+    More coming soon...
 </p>
 <hr>
 <p>
