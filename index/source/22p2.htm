@@ -1,0 +1,240 @@
+<link rel="stylesheet" href="./primary.css">
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    .box {
+        width: 32px;
+        height: 32px;
+    }
+
+    .wall {
+        background-color: darkcyan;
+    }
+
+    .in {
+        background-color: cyan;
+    }
+
+    .out {
+        background-color: goldenrod;
+    }
+
+    .bad {
+        background-color: red;
+    }
+</style>
+
+<center>
+    <a id="run_link" href="#"><img id="run_img" alt="Continue" src="./img/t_blank.jpg" /></a>
+</center>
+<hr>
+
+<script>
+
+    function checkSolution() {
+        if (document.getElementsByClassName("in").length + document.getElementsByClassName("bad").length == 0) {
+            document.getElementById("run_img").setAttribute("src","./img/t_run.jpg");
+            document.getElementById("run_link").setAttribute("href","./22p3.htm");
+        }
+    }
+
+    function mark(box) {
+        if (box.classList.contains("wall")) {
+
+            // Wipe out blocks
+            do {
+                var elements = document.getElementsByClassName("in");
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].classList.add("bad");
+                    elements[i].classList.remove("in");
+                }
+            } while (elements.length > 0);
+        }
+    
+        else if (box.classList.contains("in")) {
+            box.classList.remove("in");
+            box.classList.add("out");
+        }
+
+        checkSolution();
+    }
+</script>
+
+<center>
+    <table>
+        <tbody><tr>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box in"></button></td>
+            <td><button onclick="mark(this)" onmouseenter="mark(this)" ontouchstart="mark(this)" class="box wall"></button></td>
+        </tr>
+    </tbody></table>
+
+    <a style="background-color: white;" href="./22p2">Reset</a>
+</center>
