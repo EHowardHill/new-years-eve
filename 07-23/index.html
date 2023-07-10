@@ -1,0 +1,91 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<head>
+    <script src="https://www.midijs.net/lib/midi.js"></script>
+
+    <style>
+        body {
+            background-image: url("img/stars.jpg");
+            background-repeat: repeat;
+        }
+
+        table {
+            margin: 36px;
+        }
+
+        td {
+            margin: 24px;
+            padding: 24px;
+            background-color: white;
+            color: black;
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <button onclick="playMIDI()">Music</button>
+    </center>
+    <script>
+        function save() {
+            alert("Your game has been saved.");
+        }
+
+        function playMIDI() {
+
+            let url = 'sfx/arirang.mid';
+
+            // get_duration requires a callback as it returns nothing.
+            MIDIjs.get_duration(url, function (duration) {
+                console.info(`Duration: ${duration}`);
+                // Start the initial play
+                MIDIjs.play(url);
+
+                // This lets us keep track of current play time in seconds
+                MIDIjs.player_callback = function (mes) {
+                    if (mes.time / duration >= 1) {
+                        console.info('End reached');
+                        // This plays the audio again
+                        //MIDIjs.play(url);
+                    }
+                };
+            });
+        }
+    </script>
+
+    <table>
+        <tr>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                <ul>
+                    <li><a href="#" onclick="save()">Save</a></li>
+                    <li><a href="#" onclick="save()">Load</a></li>
+                </ul>
+                </p>
+                <p>
+                    Inventory
+                <ul>
+                </ul>
+                </p>
+            </td>
+            <td style="width: 100%">
+                <iframe width="100%" height="600px" src="scenes/01.htm"></iframe>
+            </td>
+        </tr>
+    </table>
+
+    <center>
+        <img width="128px" src="img/name.png">
+    </center>
+
+</body>
+
+</html>
