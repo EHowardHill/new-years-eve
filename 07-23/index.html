@@ -21,15 +21,99 @@
             color: black;
             vertical-align: top;
         }
+
+        img {
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
-
     <center>
-        <button onclick="playMIDI()">Music</button>
+        <table style="width: 90%;">
+            <tr>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <b>Sanity</b><br>
+                        100%
+                    </p>
+                    <p>
+                        <b>Inventory</b>
+                        <ul id="inventory">
+                        </ul>
+                    </p>
+                </td>
+                <td>
+                    <center>
+                        <img src="img/t_back.jpg"
+                            onclick="document.getElementById('iframe').setAttribute('src', 'scenes/02.htm')">
+                        <img src="img/t_music.jpg" onclick="playMIDI();">
+                        <img src="img/t_save.jpg">
+                        <img src="img/t_question.jpg"
+                            onclick="alert('You can press this from time to time for assistance.\n\nSelect the man running to the right in order to continue.');">
+                        <img src="img/t_run.jpg"
+                            onclick="document.getElementById('iframe').setAttribute('src', 'scenes/' + nextPage + '.htm')">
+    
+                    </center>
+                    <iframe id="iframe" width="100%" height="600px" src="scenes/01.htm"></iframe>
+                </td>
+            </tr>
+        </table>
+
+        <img width="128px" src="img/name.png">
     </center>
+
     <script>
+        var nextPage = "02";
+        var hasItems = [];
+
+        function addInventory(item) {
+            var inventory = document.getElementById("inventory");
+
+            if (!hasItems.includes(item)) {
+                hasItems.push(item);
+                const node = document.createElement("li");
+                const textnode = document.createTextNode(item);
+                node.appendChild(textnode);
+                inventory.appendChild(node);
+            }
+        }
+
+        function delInventory(item) {
+            inventory.childNodes.forEach(element => {
+                if (element.innerHTML == item) {
+                    inventory.removeChild(element);
+                }
+            });
+        }
+
+        function hasItem(item) {
+            var inventory = document.getElementById("inventory");
+            var exists = false;
+
+            inventory.childNodes.forEach(element => {
+                console.log(">" + element.innerHTML + "<");
+                if (element.innerHTML == item) {
+                    exists = true;
+                }
+            });
+
+            return exists;
+        }
+
+        function hasEverItem(item) {
+            return hasItems.includes(item);
+        }
+
+        function setStats(nextPageCandidate) {
+            nextPage = nextPageCandidate;
+        }
+
         function save() {
             alert("Your game has been saved.");
         }
@@ -55,36 +139,6 @@
             });
         }
     </script>
-
-    <table>
-        <tr>
-            <th> </th>
-            <th> </th>
-            <th> </th>
-        </tr>
-        <tr>
-            <td>
-                <p>
-                <ul>
-                    <li><a href="#" onclick="save()">Save</a></li>
-                    <li><a href="#" onclick="save()">Load</a></li>
-                </ul>
-                </p>
-                <p>
-                    Inventory
-                <ul>
-                </ul>
-                </p>
-            </td>
-            <td style="width: 100%">
-                <iframe width="100%" height="600px" src="scenes/01.htm"></iframe>
-            </td>
-        </tr>
-    </table>
-
-    <center>
-        <img width="128px" src="img/name.png">
-    </center>
 
 </body>
 

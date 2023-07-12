@@ -1,0 +1,54 @@
+<script>
+    parent.setStats("08");
+
+    function coin() {
+        if (parent.hasEverItem("Coin")) {
+            alert("I can't find anything else on the tracks. I better get off them.");
+        } else {
+            alert('Hey, look at that.. A coin. That might be useful.');
+            parent.addInventory('Coin');
+        }
+    }
+
+    function vending() {
+        if (parent.hasItem("Coin")) {
+            alert("The coin works in the vending machine! That hits the spot.");
+            parent.delInventory("Coin");
+            parent.addInventory("Soda Can");
+        } else if (parent.hasEverItem("Coin")) {
+            alert("We'll see if this soda comes in handy later.");
+        } else {
+            alert('Now I wish I had brought change. I supposed I would not need money where I was going.');
+        }
+    }
+
+</script>
+
+<p>
+    I can't help but feel as if I have made my first bold step into hell.
+</p>
+
+<p>
+    "Alright," said Seok, "Now we wait. The train ought to come at any moment now."
+</p>
+
+<center><img
+        src="../img/bg/cinemint_80s_photo_photograph_night_empty_indoor_city_Korean_tr_53d26b92-39ff-45ec-963d-9089aff74ea8.png">
+</center>
+
+<p>
+    It's bizarre how different the station seems after everyone has vacated the premises. It's easy to feel alone when
+    you're in a crowd. But when the crowd is gone, it's much harder.
+</p>
+
+<p>
+    Not far away is a <button onclick="vending()">vending
+        machine</button>, as well as a <button
+        onclick="alert('It looks thoroughly closed for now. There is not anything beyond the counter I could want or need. Besides - I was already stacking up charges against me, I had no reason to add theft to that list.')">ticket
+        booth</button>. There was <button onclick="alert('I could have gone for a rice cake right about now.')">once a
+        store</button> selling.. what was it? Rice cakes? No matter - it's closed now. To my <button
+        onclick="coin();">right
+        are the train tracks</button>, which seem unusually vacant for the time being. I'm unsure as to why Seok was so
+    sure
+    that a train would be coming soon after hours, but I suppose it's best not to question his judgement.
+</p>
